@@ -1,0 +1,18 @@
+type Query {
+    referredCustomerById (customer_id:Int):
+    ReferredCustomerById
+    @resolver(class:"WolfSellers\\Referred\\Model\\Resolver\\ReferredByCustomerId") @doc(description: "Return list refered by customer ID")
+}
+type ReferredCustomerById {
+    referred: [Referred]
+}
+
+type Referred {
+    entity_id:  Int
+    first_name: String
+    last_name: String
+    email: String
+    phone: String
+    status: Boolean
+    customer_id: Int
+}

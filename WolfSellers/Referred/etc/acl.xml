@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="WolfSellers_Referred::refered" title="Dev API REFERRED" translate="title" sortOrder="100">
+                    <resource id="WolfSellers_Referred::search" title="SEARCH" translate="title" sortOrder="10" />
+                    <resource id="WolfSellers_Referred::delete" title="DELETE" translate="title" sortOrder="20" />
+                    <resource id="WolfSellers_Referred::update" title="UPDATE" translate="title" sortOrder="20" />
+                    <resource id="WolfSellers_Referred::created" title="CREATED" translate="title" sortOrder="20" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

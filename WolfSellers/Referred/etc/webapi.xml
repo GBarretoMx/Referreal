@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/wolf-sellers/search" method="GET">
+        <service class="WolfSellers\Referred\Api\ReferredRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="WolfSellers_Referred::search"/>
+        </resources>
+    </route>
+    <route url="/V1/wolf-sellers/delete/:id" method="DELETE">
+        <service class="WolfSellers\Referred\Api\ReferredRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="WolfSellers_Referred::delete"/>
+        </resources>
+    </route>
+    <route url="/V1/wolf-sellers/update/:id" method="PUT">
+        <service class="WolfSellers\Referred\Api\ReferredRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="WolfSellers_Referred::update"/>
+        </resources>
+    </route>
+    <route url="/V1/wolf-sellers/created" method="POST">
+        <service class="WolfSellers\Referred\Api\ReferredRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="WolfSellers_Referred::created"/>
+        </resources>
+    </route>
+</routes>

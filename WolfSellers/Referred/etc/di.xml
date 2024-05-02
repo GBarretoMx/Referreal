@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="WolfSellers\Referred\Api\ReferredRepositoryInterface"
+                type="WolfSellers\Referred\Model\ReferredRepository"/>
+    <preference for="WolfSellers\Referred\Api\Data\ReferredInterface"
+                type="WolfSellers\Referred\Model\Referred"/>
+    <preference for="WolfSellers\Referred\Api\Data\ReferredSearchResultsInterface"
+                type="WolfSellers\Referred\Model\ReferredSearchResults"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="referred_referred_listing_data_source" xsi:type="string">WolfSellers\Referred\Model\ResourceModel\Referred\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="WolfSellers\Referred\Model\ResourceModel\Referred\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wolf_referred</argument>
+            <argument name="resourceModel" xsi:type="string">WolfSellers\Referred\Model\ResourceModel\Referred</argument>
+        </arguments>
+    </virtualType>
+</config>
+

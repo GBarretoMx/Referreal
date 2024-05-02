@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+?>
+<form class="form" id="referred-form" method="post" action="<?= $block->getBaseUrl(). 'referral/referrals/addReferral' ?>" data-mage-init='{"validation": {}}' >
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label class="label" for="referred_firstname"><span><?=  $block->escapeHtml(__('First Name'))?></span></label>
+            <div class="control">
+                <input name="referred_firstname" id="referred_firstname" title="<?=  $block->escapeHtml(__('First Name'))?>" value=""  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_lastname"><span><?=  $block->escapeHtml(__('Last Name'))?></span></label>
+            <div class="control">
+                <input name="referred_lastname" id="referred_lastname" title="<?=  $block->escapeHtml(__('Last Name'))?>" value=""  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_email"><span><?=  $block->escapeHtml(__('Email'))?></span></label>
+            <div class="control">
+                <input name="referred_email" id="referred_email" title="<?=  $block->escapeHtml(__('Email'))?>" value=""  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_phone"><span><?=  $block->escapeHtml(__('Phone'))?></span></label>
+            <div class="control">
+                <input name="referred_phone" id="referred_phone" title="<?=  $block->escapeHtml(__('Email'))?>" value=""  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>

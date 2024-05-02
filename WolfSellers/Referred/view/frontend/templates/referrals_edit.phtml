@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \WolfSellers\Referred\Block\Referrals\EditReferral $block
+ */
+
+$referral = $block->getDataReferral();
+?>
+<form class="form" id="referred-form" method="post" action="<?= $block->getBaseUrl(). 'referral/referrals/saveEdit' ?>" data-mage-init='{"validation": {}}' >
+    <fieldset class="fieldset">
+        <div class="field name required" style="display: none">
+            <label class="label" for="referred_referral_id"><span><?=  $block->escapeHtml(__('Referral ID'))?></span></label>
+            <div class="control">
+                <input name="referred_edit_id" id="referred_referral_id" title="<?=  $block->escapeHtml(__('First Name'))?>" value="<?= $referral->getEntityId() ?>"  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_edit_firstname"><span><?=  $block->escapeHtml(__('First Name'))?></span></label>
+            <div class="control">
+                <input name="referred_edit_firstname" id="referred_edit_firstname" title="<?=  $block->escapeHtml(__('First Name'))?>" value="<?= $referral->getFirstName() ?>"  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_edit_lastname"><span><?=  $block->escapeHtml(__('Last Name'))?></span></label>
+            <div class="control">
+                <input name="referred_edit_lastname" id="referred_edit_lastname" title="<?=  $block->escapeHtml(__('Last Name'))?>" value="<?= $referral->getLastName() ?>"  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_edit_email"><span><?=  $block->escapeHtml(__('Email'))?></span></label>
+            <div class="control">
+                <input name="referred_edit_email" id="referred_edit_email" title="<?=  $block->escapeHtml(__('Email'))?>" value="<?= $referral->getEmail() ?>"  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="referred_edit_phone"><span><?=  $block->escapeHtml(__('Phone'))?></span></label>
+            <div class="control">
+                <input name="referred_edit_phone" id="referred_edit_phone" title="<?=  $block->escapeHtml(__('Email'))?>" value="<?= $referral->getPhone() ?>"  class="input-text" type="text" data-validate='{"required":true}'/>
+            </div>
+        </div>
+
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>
